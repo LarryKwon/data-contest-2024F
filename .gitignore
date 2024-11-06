@@ -1,0 +1,46 @@
+# R and RStudio
+.Rhistory
+.RData
+.Rproj.user/
+.Rproj.user/*
+.Rproj.user/**
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info
+dist/
+build/
+*.whl
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Data files
+*.csv
+*.tsv
+*.json
+*.xml
+*.xls
+*.xlsx
+*.h5
+*.hdf5
+*.parquet
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
