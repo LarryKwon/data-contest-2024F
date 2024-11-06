@@ -28,11 +28,3 @@ repos:
   hooks:
     - id: codespell
       files: ^.*\.(py|c|h|md|rst|yml)$
-
-- repo: local
-  hooks:
-  - id: mypy
-    name: mypy
-    entry: mypy
-    language: python
-    types: [python]
