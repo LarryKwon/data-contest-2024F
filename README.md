@@ -9,6 +9,10 @@ source .venv/bin/activate  # Windows: financerag_env\Scripts\activate
 # Install Poetry (package manager for python, like npm)
 pip install poetry
 
+# set config for automatically install python 3.12
+poetry config virtualenvs.prefer-active-python true
+
+
 # install all packages in pyproject.toml. the installed packages can be found in .venv/bin
 poetry install
 
@@ -18,7 +22,7 @@ poetry add [package]
 # removing package
 poetry remove [package]
 
-## executing python. it excutes the command inside the .venv
+## executing python. it executes the command inside the .venv
 poetry run python -V
 
 ```
@@ -72,7 +76,7 @@ poetry run python -V
    ```python
    # Retrieve relevant documents
    results = finder_task.retrieve(retriever=retriever)
-   
+
    # Rerank the results
    from financerag.rerank import CrossEncoderReranker
    reranker = CrossEncoderReranker(CrossEncoder('cross-encoder/ms-marco-MiniLM-L-12-v2'))
