@@ -21,6 +21,7 @@ class Lexical(abc.ABC):
     classes that calculate document-query relevance using lexical methods such as BM25 or
     other term-based approaches.
     """
+      
 
     @abc.abstractmethod
     def get_scores(self, query: List[str], **kwargs) -> List[float]:
