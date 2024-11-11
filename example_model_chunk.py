@@ -71,9 +71,9 @@ reranker_model_name = "cross-encoder/ms-marco-MiniLM-L-12-v2"
 
 # 각 task를 위한 클래스와 결과 저장 경로 정의
 tasks = {
-    # "FinDER": FinDER(),
-    # "FinQABench": FinQABench(),
-    # "FinanceBench": FinanceBench(),
+    "FinDER": FinDER(),
+    "FinQABench": FinQABench(),
+    "FinanceBench": FinanceBench(),
     "TATQA": TATQA(),
     "FinQA": FinQA(),
     "ConvFinQA": ConvFinQA(),
@@ -86,8 +86,8 @@ for task_name, task_instance in tasks.items():
 
     # 청크 나누기
     # 기본값 설정
-    chunk_size = 5
-    overlap_size = 2
+    chunk_size = 3
+    overlap_size = 1
 
     corpus = list(task_instance.corpus.items())
     new_corpus = []
@@ -155,7 +155,7 @@ for task_name, task_instance in tasks.items():
     # 결과 저장
     output_dir = os.path.join("output", task_name)
     os.makedirs(output_dir, exist_ok=True)
-    task_instance.save_results(top_k=50, output_dir=output_dir)
+    task_instance.save_results(top_k=70, output_dir=output_dir)
     print(f"{task_name} 결과가 '{output_dir}'에 저장되었습니다.")
 
     path_name = next(os.walk(output_dir))[1][0]
